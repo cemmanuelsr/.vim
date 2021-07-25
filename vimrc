@@ -24,6 +24,10 @@ set shortmess+=I
 " Show line numbers.
 set number
 
+" Fixing color change in tmux
+set background=dark
+set t_Co=256
+
 " This enables relative line numbering mode. With both number and
 " relativenumber enabled, the current line shows the true line number, while
 " all other lines (above and below) are numbered relative to the current line.
