@@ -14,6 +14,10 @@ set nocompatible
 " Turn on syntax highlighting.
 syntax on
 
+" Pathogen setup
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 " Disable the default Vim startup message.
 set shortmess+=I
 
@@ -84,3 +88,4 @@ inoremap <Nul> <c-n>
 " Setting mupdf as default PDF preview app
 let g:livepreview_previewer = 'mupdf'
 autocmd Filetype tex setl updatetime=1
+
