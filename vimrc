@@ -73,9 +73,7 @@ set mouse+=a
 
 
 map <f12> :!ctags -R .<cr>
-vnoremap <C-c> "+y
 vnoremap <C-x> "+x
-map <C-v> "+gP
 
 set fileformat=unix
 set encoding=utf-8
