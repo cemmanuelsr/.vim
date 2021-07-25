@@ -26,7 +26,7 @@ set number
 
 " Fixing color change in tmux
 set background=dark
-set t_Co=256
+colorscheme peaksea
 
 " This enables relative line numbering mode. With both number and
 " relativenumber enabled, the current line shows the true line number, while
