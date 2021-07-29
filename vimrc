@@ -1,5 +1,3 @@
-" Comments in Vimscript start with a `"`.
-
 " If you open this file in Vim, it'll be syntax highlighted for you.
 
 " Vim is based on Vi. Setting `nocompatible` switches from the default
@@ -10,12 +8,34 @@
 " loaded some other way (e.g. saved as `foo`, and then Vim started with
 " `vim -u foo`).
 set nocompatible
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'preservim/nerdtree'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
 
 " Turn on syntax highlighting.
 syntax on
 
 " Pathogen setup
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 call pathogen#helptags()
 
 " Disable the default Vim startup message.
@@ -25,8 +45,9 @@ set shortmess+=I
 set number
 
 " Fixing color change in tmux
+set termguicolors
 set background=dark
-colorscheme solarized
+colorscheme NeoSolarized
 
 " This enables relative line numbering mode. With both number and
 " relativenumber enabled, the current line shows the true line number, while
@@ -91,3 +112,9 @@ inoremap <Nul> <c-n>
 let g:livepreview_previewer = 'mupdf'
 autocmd Filetype tex setl updatetime=1
 
+let NERDTreeNodeDelimiter = "\t"
+" NERDTree setting defaults to work around http://github.com/scrooloose/nerdtree/issues/489
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeGlyphReadOnly = "RO"
